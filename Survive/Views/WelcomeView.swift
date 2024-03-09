@@ -16,7 +16,7 @@ struct WelcomeView: View {
     @AppStorage("fontSize") private var fontSize: Double = 20
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 // Background configuration.
                 Image("WelcomeViewImage")
