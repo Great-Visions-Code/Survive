@@ -15,7 +15,6 @@ import SwiftUI
 /// chapter images, and interactive options for the player.
 struct ChapterView: View {
     @ObservedObject var viewModel: StoryProgressionViewModel // Manages story progression.
-    @State private var isLinkActive = false // Indicates navigation link activation.
     @State private var scrollViewTopID = 0 // Identifier to reset the scroll view.
     @AppStorage("fontSize") private var fontSize: Double = 20 // User's preferred font size.
 
