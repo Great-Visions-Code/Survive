@@ -55,3 +55,4 @@ fastlane/test_output
 ##
 swiftlint_report.json
 
+*.xcuserstate
