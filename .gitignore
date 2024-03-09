@@ -20,11 +20,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-# Xcodeproj
-##
-Survive.xcodeproj/*.xcworkspace/xcuserdata/gustavovazquez.xcuserdatad/UserInterfaceState.xcuserstate
-Survive.xcodeproj/xcuserdata/
-
 # Swift Package Manager
 ##
 .build/
