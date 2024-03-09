@@ -61,6 +61,7 @@ struct EndView: View {
                     NavigationButton(destination: WelcomeView(),
                                      buttonText: "Return to Main Menu",
                                      backgroundColor: AppColors.pickChoiceBackgroundColor)
+                    
                     .padding(.top, 20) // Additional spacing above the restart link.
                 }
             }
