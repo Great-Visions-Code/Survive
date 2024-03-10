@@ -15,7 +15,6 @@ import SwiftUI
 /// chapter images, and interactive options for the player.
 struct ChapterView: View {
     @ObservedObject var viewModel: StoryProgressionViewModel // Manages story progression.
-    @State private var isLinkActive = false // Indicates navigation link activation.
     @State private var scrollViewTopID = 0 // Identifier to reset the scroll view.
     @AppStorage("fontSize") private var fontSize: Double = 20 // User's preferred font size.
 
@@ -74,10 +73,11 @@ struct ChapterView: View {
                                     .padding(.bottom, 5)
                                 }
                                 
-                                // Conditional navigation link for end chapters.
+                                // Conditional navigation link for end chapter.
                                 if let chapterID = viewModel.currentChapter?.id, chapterID >= 17 {
                                     NavigationButton(destination: EndView(),
                                                      buttonText: "Continue",
+                                                     fontSize: fontSize,
                                                      backgroundColor: AppColors.pickChoiceBackgroundColor)
                                     
                                 }

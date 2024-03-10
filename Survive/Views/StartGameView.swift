@@ -24,12 +24,13 @@ struct StartGameView: View {
             Image("StartGameViewImage")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all) // Extends the background to the edges of the display.
+                .edgesIgnoringSafeArea(.all)
 
             VStack {
                 // Button to initiate the game's story, leading the player into the narrative.
                 NavigationButton(destination: ChapterView(viewModel: viewModel),
-                                 buttonText: "> Start Story <")
+                                 buttonText: "> Start Story <",
+                                 fontSize: fontSize)
             }
         }
     }

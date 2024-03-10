@@ -23,8 +23,6 @@ struct AppColors {
     
     /// Background color for selectable choices, slightly lighter than the main background.
     static let pickChoiceBackgroundColor = Color(red: 0.15, green: 0.15, blue: 0.15)
-    
-    // Additional theme-specific colors can be defined here as needed.
 }
 
 /// Preview view for visualizing `AppColors` within the app design context.
@@ -50,17 +48,15 @@ struct ColorPreview: View {
         HStack {
             color
                 .frame(width: 60, height: 60) // Visual representation of the color.
-                .cornerRadius(10) // Aesthetic rounding of corners.
-                .shadow(radius: 3) // Shadow for depth.
+                .cornerRadius(10)
             
             Text(name)
-                .foregroundColor(.white) // Text color for readability.
+                .foregroundColor(.white)
                 .padding(.leading, 10)
         }
         .padding(10)
     }
 }
-
 
 #Preview {
     AppColorsPreview()

@@ -60,14 +60,15 @@ struct EndView: View {
                        // Navigation link to restart the journey.
                     NavigationButton(destination: WelcomeView(),
                                      buttonText: "Return to Main Menu",
+                                     fontSize: fontSize,
                                      backgroundColor: AppColors.pickChoiceBackgroundColor)
+                    
                     .padding(.top, 20) // Additional spacing above the restart link.
                 }
             }
         }
     }
 }
-
 
 #Preview {
     EndView()

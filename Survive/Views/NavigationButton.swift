@@ -52,7 +52,7 @@ struct NavigationButton<Destination: View>: View {
     var body: some View {
         NavigationLink(destination: destination) {
             Text(buttonText)
-                .font(.system(size: fontSize))
+                .font(.system(size: CGFloat(fontSize)))
                 .foregroundColor(fontColor)
                 .bold()
                 .padding()
@@ -78,5 +78,6 @@ struct ExampleUsageView: View {
 }
 
 #Preview {
-    NavigationButton(destination: WelcomeView(), buttonText: "Start")
+    NavigationButton(destination: WelcomeView(), 
+                     buttonText: "Start")
 }
