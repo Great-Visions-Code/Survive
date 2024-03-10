@@ -5,7 +5,7 @@
 //  Created by Gustavo Vazquez on 2/17/24.
 //
 //  This view serves as the landing page of the "Survive" app. It presents the user with a welcoming
-//  message and options to StartGameView() or access SettingsView().
+//  message and options to StartGameView() or access to SettingsView().
 //
 
 import SwiftUI
@@ -30,18 +30,19 @@ struct WelcomeView: View {
                     
                     // App name display with styling.
                     Text("Survive!")
-                        .font(.custom("Times New Roman", size: 40))
+                        .font(.system(size: fontSize))
                         .fontWeight(.bold)
                         .foregroundColor(AppColors.mainFontColor)
                         .padding()
                         .background(Color.black.opacity(0.85))
                         .cornerRadius(15)
                     
-                    Spacer().frame(height: 20) // Separates title from start game link.
+                    Spacer().frame(height: 20) // Separates title from StartGameView() link.
                     
                     // Link to start the game, styled for visibility.
                     NavigationButton(destination: StartGameView(),
-                                     buttonText: ">>Click Here to Start<<")
+                                     buttonText: ">>Click Here to Start<<",
+                                     fontSize: fontSize)
                     Spacer() // Completes vertical centering.
                 }
                 
@@ -62,7 +63,7 @@ struct WelcomeView: View {
                     Spacer() // Aligns icon at the top.
                 }
             }
-            .navigationBarBackButtonHidden(true) // This hides the back button.
+            .navigationBarBackButtonHidden(true) // Hides the back button.
         }
     }
 }
