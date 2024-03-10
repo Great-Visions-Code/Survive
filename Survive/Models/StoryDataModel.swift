@@ -259,7 +259,8 @@ let storyChapters = [
                     The center looms larger with every step, its makeshift barriers and guarded perimeters a welcome sight. You can see figures moving about, survivors and soldiers alike, all united in their fight against the chaos that has consumed the world. Your heart pounds, not just from the exertion, but from the realization that you are about to cross into safety, to join others who have survived the nightmare.
                """,
                options: [
-           Chapter.Option(text: "Head straight for the evacuation center, no longer caring for stealth.", nextChapterID: 17)], imageName: ["Chapter16Sprint"]),
+           Chapter.Option(text: "Head straight for the evacuation center, no longer caring for stealth.", nextChapterID: 17)], 
+               imageName: ["Chapter16Sprint"]),
 // Chapter 17 CURRENT ENDING
        Chapter(id: 17, chapterTitle: "Arrival",
                text: """
@@ -282,7 +283,8 @@ let storyChapters = [
                options: [],
                imageName: ["Chapter17MilitaryBaseArrival"])
     
-// Template for adding more chapters. This section illustrates how to add additional chapters to the story.
+// Template for adding more chapters. 
+// This section illustrates how to add additional chapters to the story.
 /*
 //Chapter X: 
        Chapter(id: X, chapterTitle: "Title Here",
