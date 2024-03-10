@@ -73,10 +73,11 @@ struct ChapterView: View {
                                     .padding(.bottom, 5)
                                 }
                                 
-                                // Conditional navigation link for end chapters.
+                                // Conditional navigation link for end chapter.
                                 if let chapterID = viewModel.currentChapter?.id, chapterID >= 17 {
                                     NavigationButton(destination: EndView(),
                                                      buttonText: "Continue",
+                                                     fontSize: fontSize,
                                                      backgroundColor: AppColors.pickChoiceBackgroundColor)
                                     
                                 }
