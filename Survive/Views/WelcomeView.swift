@@ -62,6 +62,7 @@ struct WelcomeView: View {
                     Spacer() // Aligns icon at the top.
                 }
             }
+            .navigationBarBackButtonHidden(true) // This hides the back button.
         }
     }
 }
