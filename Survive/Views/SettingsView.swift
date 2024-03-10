@@ -19,7 +19,7 @@ struct SettingsView: View {
             Image("SettingsViewImage")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all) // Allows the image to extend to the screen edges.
+                .edgesIgnoringSafeArea(.all)
 
             VStack {
                 // Title for the settings page.
