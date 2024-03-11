@@ -22,9 +22,8 @@ struct EndView: View {
             VStack {
                 // Title for the end scene.
                 Text("The Fragile Haven")
-                    .font(.title)
+                    .font(.system(size: fontSize + 8))
                     .foregroundColor(AppColors.mainFontColor)
-                    .padding()
                 
                 ScrollView {
                     // Introductory image for the end content.
