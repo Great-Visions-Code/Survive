@@ -298,7 +298,6 @@ let storyChapters = [
                ],
                imageName: ["ImageName1", "ImageName2"]), // Associated images for Chapter X.
     */
-    
 ]
 
 /// Retrieves a chapter from the story by its unique identifier.
