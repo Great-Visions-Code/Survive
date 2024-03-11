@@ -25,49 +25,45 @@ struct SettingsView: View {
                 // Title for the settings page.
                 Text("Settings")
                     .foregroundColor(AppColors.mainFontColor)
-                    .font(.largeTitle)
+                    .font(.system(size: fontSize + 10))
                     .bold()
                     .padding()
-                    .background(Color.black.opacity(0.85)) // Enhances text readability.
+                    .background(AppColors.mainBackgroundColor.opacity(0.85)) // Enhances text readability.
                     .cornerRadius(15)
                 
                 Spacer() // Pushes content to the top.
                 
                 VStack(spacing: 20) {
                     // Displays the current font size.
-                    Text("Font Size: \(Int(fontSize))")
+                    Text("Example text size")
                         .font(.system(size: fontSize))
                         .foregroundColor(AppColors.mainFontColor)
-                        .bold()
                         .background(AppColors.mainBackgroundColor)
                         .cornerRadius(15)
                     
                     // Slider for adjusting the font size.
                     VStack {
-                        Slider(value: $fontSize, in: 14...32, step: 1) {
-                            Text("Font Size")
+                        Slider(value: $fontSize, in: 15...35, step: 2) {
                         } minimumValueLabel: {
-                            Text("14")
-                                .font(.body)
+                            Text("Smaller")
+                                .font(.system(size: 15))
                                 .foregroundColor(AppColors.mainFontColor)
-                                .bold()
                         } maximumValueLabel: {
-                            Text("32")
-                                .font(.body)
+                            Text("Larger")
+                                .font(.system(size: 35))
                                 .foregroundColor(AppColors.mainFontColor)
-                                .bold()
                         }
                         .accentColor(AppColors.clickableLinkColor)
                         .padding()
-                        .background(Color.white.opacity(0.15))
+                        .background(AppColors.pickChoiceBackgroundColor.opacity(0.85))
                         .cornerRadius(15)
                     }
                 }
                 .padding()
-                .background(Color.black.opacity(0.85))
+                .background(AppColors.mainBackgroundColor.opacity(0.85))
                 .cornerRadius(50)
                 
-                Spacer() // Ensures the settings are aligned at the top.
+                Spacer() // Ensures the font size settings are aligned at middle.
             }
         }
     }
