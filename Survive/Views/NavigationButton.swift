@@ -62,22 +62,11 @@ struct NavigationButton<Destination: View>: View {
     }
 }
 
-/// Example usage of the NavigationButton within a SwiftUI View.
-/// Demonstrates how to integrate the button into a navigation view, configuring it for navigation to a chapter view.
-struct ExampleUsageView: View {
-    var body: some View {
-        NavigationView {
-            NavigationButton(destination: ChapterView(viewModel: StoryProgressionViewModel()),
-                             buttonText: "> Start Story <",
-                             fontSize: 20,
-                             fontColor: AppColors.clickableLinkColor,
-                             backgroundColor: Color.black.opacity(0.85),
-                             cornerRadius: 15)
-        }
-    }
-}
-
 #Preview {
-    NavigationButton(destination: WelcomeView(), 
-                     buttonText: "Start")
+    NavigationButton(destination: ChapterView(viewModel: StoryProgressionViewModel()),
+                     buttonText: "> Start Story <",
+                     fontSize: 20,// Replace Int with 'fontSize' var
+                     fontColor: AppColors.clickableLinkColor,
+                     backgroundColor: AppColors.pickChoiceBackgroundColor,
+                     cornerRadius: 15)
 }
