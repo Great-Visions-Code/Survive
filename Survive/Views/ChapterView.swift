@@ -22,13 +22,13 @@ struct ChapterView: View {
         ZStack {
             // Background color setup for the chapter view.
             AppColors.mainBackgroundColor.ignoresSafeArea()
+            
             VStack {
                 if let chapter = viewModel.currentChapter {
                     // Chapter title display.
                     Text(chapter.chapterTitle)
-                        .font(.title)
+                        .font(.system(size: fontSize + 8))
                         .foregroundColor(AppColors.mainFontColor)
-                        .padding()
                     
                     ScrollViewReader { scrollViewProxy in
                         ScrollView {
@@ -51,7 +51,6 @@ struct ChapterView: View {
                                     Image(chapter.imageName[1])
                                         .resizable()
                                         .scaledToFit()
-                                        .padding()
                                 }
                                 
                                 // Interactive options for story progression.
@@ -83,7 +82,6 @@ struct ChapterView: View {
                                 }
                             }
                         }
-                        .padding(.bottom, 20) // Scroll view bottom padding.
                     }
                 } else {
                     // Fallback text when chapter data is unavailable.
