@@ -54,4 +54,9 @@ Your insights are the brink of our narrative expansion! Contributions are welcom
 "Survive" — How will you make it through the zombie apocalypse.
 ___
 
+## License
+
+[GNU General Public License v3.0](LICENSE)
+___
+
 Crafted by Gustavo Vazquez on February 8, 2024.
