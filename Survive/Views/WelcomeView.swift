@@ -28,20 +28,20 @@ struct WelcomeView: View {
                 VStack {
                     Spacer() // Ensures vertical centering of content.
                     
-                    // App name display with styling.
-                    Text("Survive!")
-                        .font(.system(size: fontSize))
-                        .fontWeight(.bold)
+                    // App name display.
+                    Text("Survive")
+                        .font(.system(size: fontSize + 15))
+                        .bold()
                         .foregroundColor(AppColors.mainFontColor)
                         .padding()
-                        .background(Color.black.opacity(0.85))
+                        .background(AppColors.mainBackgroundColor.opacity(0.85))
                         .cornerRadius(15)
                     
                     Spacer().frame(height: 20) // Separates title from StartGameView() link.
                     
                     // Link to start the game, styled for visibility.
                     NavigationButton(destination: StartGameView(),
-                                     buttonText: ">>Click Here to Start<<",
+                                     buttonText: ">> Click Here to Start <<",
                                      fontSize: fontSize)
                     Spacer() // Completes vertical centering.
                 }
@@ -55,7 +55,7 @@ struct WelcomeView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
+                                .foregroundColor(AppColors.mainFontColor)
                                 .padding([.trailing]) // Adjusts padding to keep within screen bounds.
                         }
                         .padding() // Improves touch area.
