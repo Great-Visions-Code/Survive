@@ -50,7 +50,7 @@ I welcome any feedback, ideas, or contributions you have. Together, we can make 
 
 ## License
 
-[GNU General Public License v3.0](LICENSE)
+[MIT License](LICENSE)
 
 ---
 
