@@ -35,7 +35,7 @@ struct SettingsView: View {
                 
                 VStack(spacing: 20) {
                     // Displays the current font size.
-                    Text("Example text size")
+                    Text("-Example text size-")
                         .font(.system(size: fontSize))
                         .foregroundColor(AppColors.mainFontColor)
                         .background(AppColors.mainBackgroundColor)
@@ -45,11 +45,11 @@ struct SettingsView: View {
                     VStack {
                         Slider(value: $fontSize, in: 15...35, step: 2) {
                         } minimumValueLabel: {
-                            Text("Smaller")
+                            Text("Aa")
                                 .font(.system(size: 15))
                                 .foregroundColor(AppColors.mainFontColor)
                         } maximumValueLabel: {
-                            Text("Larger")
+                            Text("Aa")
                                 .font(.system(size: 35))
                                 .foregroundColor(AppColors.mainFontColor)
                         }
