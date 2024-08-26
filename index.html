@@ -1,18 +1,19 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Survive: Your Story, Your Choices - iOS Game Project</title>
+    <title>Survive: A Text-Based Zombie Apocalypse RPG for iOS</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Explore 'Survive', a text-based zombie apocalypse game developed by Gustavo Vazquez using SwiftUI for iOS. Your choices shape the story!" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="description" content="Explore 'Survive', a text-based zombie apocalypse RPG developed by Gustavo Vazquez using SwiftUI for iOS. Make choices that shape your adventure!" />
+    <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
 </head>
 <body class="is-preload">
 
     <!-- Nav -->
     <nav id="nav">
         <ul class="container">
-            <li><a href="#top">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#showcase">Screenshots</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -22,17 +23,17 @@
     <!-- About the Project -->
     <article id="about" class="wrapper style1">
         <div class="container">
+            <header>
+                <h1>Survive</h1>
+            </header>
             <div class="row">
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/initialWelcomeImage.jpg" alt="initialWelcomeImage" /></span>
+                    <span class="image fit"><img src="images/initialWelcomeImage.jpg" alt="Initial welcome screen of Survive game" /></span>
                 </div>
                 <div class="col-8 col-7-large col-12-medium centered-text">
-                    <header>
-                        <h1>Survive</h1>
-                    </header>
-                    <p>Survive is my inaugural venture into iOS development using Swift and SwiftUI. This text-based RPG game plunges players into a zombie apocalypse, where every choice they make influences their journey. The game is designed to be both engaging and immersive, featuring comic-style images that complement the narrative.</p>
+                    <p>Survive is my inaugural venture into iOS development using Swift and SwiftUI. This text-based RPG immerses players into a zombie apocalypse, where every choice they make influences their journey. The game is designed to be both engaging and immersive, featuring comic-style images that complement the narrative.</p>
                     <p>In Survive, players awaken in a world overrun by zombies and must navigate through a series of decisions that determine the outcome of their adventure. From start to finish, creating this game has been an incredibly fun and educational experience, offering deep insights into SwiftUI’s navigation and state management features. Each decision branches the story, pushing players to strategize their way through the apocalypse and ultimately survive.</p>
-                    <a href="#features" class="button large scrolly">Explore the Game Features</a>
+                    <a href="#features" class="button large scrolly">Dive into Game Features</a>
                 </div>
             </div>
         </div>
@@ -42,7 +43,7 @@
     <article id="features" class="wrapper style2">
         <div class="container">
             <header>
-                <h2>Game Features</h2>
+                <h1>Game Features</h1>
                 <p>Survive is designed to be a dynamic storytelling experience, where every decision changes the course of the game.</p>
             </header>
             <div class="row aln-center">
@@ -78,28 +79,28 @@
     <article id="showcase" class="wrapper style3">
         <div class="container">
             <header>
-                <h2>App Showcase</h2>
+                <h1>App Showcase</h1>
                 <p>Discover snapshots of Survive's gameplay through the images below. Each screenshot provides a glimpse into different aspects of the app, showcasing the development process and key features.</p>
             </header>
             <div class="row">
                 <div class="col-4 col-6-medium col-12-small">
                     <article class="box style2">
-                        <a href="#" class="image featured"><img src="images/dynamicStoryTellingImage.jpg" alt="dynamicStoryTellingImage" /></a>
+                        <a href="#" class="image featured"><img src="images/dynamicStoryTellingImage.jpg" alt="Dynamic storytelling feature in Survive" /></a>
                         <h3><a href="#">Overview</a></h3>
-                        <p>The concept for Survive was inspired by a deep fascination with zombies and the goal of starting with a straightforward project. This screenshot highlights the beginning of the game, displaying the initial chapter with static images and text for players to read.</p>
+                        <p>The concept for Survive was inspired by a deep fascination with zombies and the goal of creating a simple, text-based app to gain hands-on experience with what I have been learning. This screenshot highlights the beginning of the game, showcasing the initial chapter with static images and text for players to read.</p>
                     </article>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <article class="box style2">
-                        <a href="#" class="image featured"><img src="images/pickYourPathImage.jpg" alt="pickYourPathImage" /></a>
-                        <h3><a href="#">Interactive Choices</a></h3>
+                        <a href="#" class="image featured"><img src="images/pickYourPathImage.jpg" alt="Pick your path choices in Survive" /></a>
+                        <h3><a href="#">Inspiration</a></h3>
                         <p>Drawing inspiration from old Goosebumps books that featured interactive storytelling, this image showcases a part of the app where users encounter interactive choices. It provides a sample of the decisions players can make, influencing their experience within the game.</p>
                     </article>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <article class="box style2">
-                        <a href="#" class="image featured"><img src="images/immersiveVisualsImage.jpg" alt="immersiveVisualsImage" /></a>
-                        <h3><a href="#">Challenges in Navigation</a></h3>
+                        <a href="#" class="image featured"><img src="images/immersiveVisualsImage.jpg" alt="Immersive visuals in Survive" /></a>
+                        <h3><a href="#">Challenges</a></h3>
                         <p>One of the biggest challenges faced was mastering `NavigationView` and `NavigationStack` to link views based on user interactions. Managing these components effectively was crucial for creating a seamless navigation experience in the app.</p>
                     </article>
                 </div>
@@ -118,8 +119,8 @@
                 <hr />
                 <h3>Get in Touch</h3>
                 <ul class="social">
-                    <li><a href="https://github.com/Great-Visions-Code" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                    <li><a href="mailto:great.visions@icloud.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    <li><a href="https://github.com/Great-Visions-Code" class="icon brands fa-github" aria-label="GitHub Profile"><span class="label">GitHub</span></a></li>
+                    <li><a href="mailto:great.visions@icloud.com" class="icon solid fa-envelope" aria-label="Email Gustavo Vazquez"><span class="label">Email</span></a></li>
                 </ul>
                 <hr />
             </div>
