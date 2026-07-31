@@ -1,57 +1,121 @@
-# Survive: Your Story, Your Choices
+<div align="center">
+  <img src="Pictures/icon.jpg" width="112" alt="Survive app icon">
 
-Welcome to "Survive," a thrilling text-based game that draws you into a world on the edge of a zombie apocalypse. Crafted with Swift and designed for iOS, this game is not just about storytelling; it's about immersing you in a narrative where your decisions dictate the path of your adventure. This is my first project in Swift, aiming to learn and explore iOS development. I'm eager to hear your feedback or any advice you might have!
+  # Survive
 
-## Your Adventure Awaits
+  **A choice-driven zombie-apocalypse story for iPhone and iPad**
 
-In "Survive," you wake up to a world forever changed, where every choice can mean the difference between life and death. Navigate through this chaotic new reality, where your decisions will shape your journey and determine your fate.
+  Built with SwiftUI as a first iOS development project.
+</div>
 
-<img src="Pictures/WelcomeView.gif" width="250" alt="Welcome Screen">  <img src="Pictures/ChapterView.gif" width="250" alt="Chapter Screen">
+> [!IMPORTANT]
+> **This project is archived.** Survive is no longer under active development, and no new features, releases, compatibility updates, or support are planned. The repository remains available as a historical snapshot and learning reference. Issues and pull requests may not be reviewed.
 
+## About
 
-### Game Highlights
+Survive is a short, text-based role-playing game in which each decision changes the player's route through the opening hours of a zombie outbreak. The story combines long-form narrative, comic-style scene artwork, and branching choices as the player attempts to reach an evacuation center.
 
-- **Dynamic Storytelling:** Your choices influence the story, leading to a variety of possible endings.
-- **Immersive Visuals:** Experience the story with beautifully crafted still images that complement the narrative.
-- **Decision Impact:** The choices you make have real consequences, shaping your unique story.
-- **Evolving Adventures:** The story grows and changes, offering new possibilities and endings to discover.
+The current version contains 17 chapters. Choices lead through different scenes, but every route ultimately converges on the same ending and final epilogue.
 
-## Behind the Scenes
+## Screenshots
 
-Developed with SwiftUI, "Survive" focuses on a seamless and engaging user experience, utilizing the Model-View-ViewModel (MVVM) pattern for efficient updates and maintenance.
+<div align="center">
+  <img src="Pictures/WelcomeView.gif" width="260" alt="Survive welcome screen">
+  &nbsp;&nbsp;
+  <img src="Pictures/ChapterView.gif" width="260" alt="Survive chapter and choice screen">
+</div>
 
-### Getting Started
+## Features
 
-1. **Launch the Game:** Dive into the survival story.
-2. **Make Your Choices:** Your decisions will guide the outcome of your adventure.
-3. **Discover New Paths:** The story evolves, inviting you to explore different possibilities.
+- Branching, choice-driven story progression across 17 chapters
+- Bundled comic-style artwork for key story scenes
+- A single completed ending with a concluding epilogue
+- Adjustable text size from 15 to 35 points
+- Persistent font-size preference using `AppStorage`
+- Native SwiftUI interface for iPhone and iPad
+- No third-party packages, accounts, network services, or backend
+- A separate static showcase site included in the repository
 
-## Feature Peek
+## Requirements
 
-"Survive" is built to bring stories to life, featuring customizable chapters, static images, and a dynamic layout that adapts to the unfolding narrative.
+- A Mac with Xcode 15.2 or newer
+- An iPhone or iPad running iOS/iPadOS 17.2 or newer, or a compatible simulator
+- Git, if cloning from the command line
 
-## Join the Adventure
+The Xcode project targets iOS 17.2, uses Swift 5 language mode, and has no external package dependencies.
 
-Interested in shaping the world of "Survive"? Your contributions can help expand the story, add new features, or improve the game.
+## Build and Run
 
-```sh
-git clone https://github.com/Great-Visions-Code/Survive.git
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/Great-Visions-Code/Survive.git
+   cd Survive
+   ```
+
+2. Open `Survive.xcodeproj` in Xcode.
+3. Select the `Survive` scheme.
+4. Choose an iPhone or iPad simulator running iOS 17.2 or newer.
+5. Press **Run**.
+
+The project builds for the simulator without code signing. To run it on a physical device, select your own development team under **Signing & Capabilities**. You may also need to replace the existing `com.GVDev.Survive` bundle identifier with one registered to your team.
+
+No prebuilt app or App Store release is included.
+
+## How to Play
+
+1. Launch the app and select **Click Here to Start**.
+2. Select **Start Story** to begin with Chapter 1.
+3. Read each chapter and choose one of the highlighted actions.
+4. Continue until you reach the evacuation center and final epilogue.
+5. Use **Return to Main Menu** to start again and explore another route.
+
+The gear button on the welcome screen opens the text-size setting. Changes are saved locally between launches.
+
+## Project Structure
+
+```text
+Survive/
+├── Survive.xcodeproj/          # Xcode project
+├── Survive/
+│   ├── Survive.swift           # Application entry point
+│   ├── Models/
+│   │   ├── ChapterModel.swift
+│   │   └── StoryDataModel.swift
+│   ├── ViewModels/
+│   │   └── StoryProgressionViewModel.swift
+│   ├── Views/                  # SwiftUI screens and shared UI
+│   └── Assets.xcassets/        # App icon and story artwork
+├── Pictures/                   # README screenshots and artwork
+├── index.html                  # Static project showcase
+├── assets/ and images/         # Showcase site resources
+└── LICENSE
 ```
 
-Dive into "Survive" and see how you fare in the zombie apocalypse.
+The app follows a small MVVM structure:
 
-## Your Feedback Matters
+- `Chapter` and `StoryDataModel.swift` define the chapter content and choice graph.
+- `StoryProgressionViewModel` owns the current chapter and resolves each selected destination.
+- SwiftUI views render the current state, present choices, and manage navigation.
 
-I welcome any feedback, ideas, or contributions you have. Together, we can make "Survive" an unforgettable adventure.
+## Static Showcase
 
----
+The repository also contains a standalone promotional website. Open `index.html` in a browser, or serve the repository root with any static web server, to view it. The site does not need a build step or package installation.
 
-"Survive" — Chart your path through the zombie apocalypse.
+## Known Limitations
+
+- All branches currently converge on one ending.
+- Progress is not saved; there are no save slots or checkpoints.
+- Story text and artwork are bundled with the app and cannot be downloaded or edited in-app.
+- The project does not include an automated test target.
+- Compatibility with future iOS and Xcode releases is not being maintained.
+
+## Background and Credits
+
+Survive was created by Great-Visions-Code Software by Gustavo Vazquez in 2024 as a first Swift and SwiftUI project. It was inspired by branching storybooks and built to explore SwiftUI navigation, observable state, reusable views, and data-driven storytelling.
+
+The comic-style story artwork was created with generative AI. The static showcase uses a design by [HTML5 UP](https://html5up.net/).
 
 ## License
 
-[MIT License](LICENSE)
-
----
-
-Proudly created by Gustavo Vazquez on February 8, 2024.
+Survive is available under the [MIT License](LICENSE).
