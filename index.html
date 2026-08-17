@@ -1,145 +1,531 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Survive: A Text-Based Zombie Apocalypse RPG for iOS</title>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Explore 'Survive', a text-based zombie apocalypse RPG developed by Gustavo Vazquez using SwiftUI for iOS. Make choices that shape your adventure!" />
-    <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
-</head>
-<body class="is-preload">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Survive is Gustavo Vazquez's first SwiftUI project: a 17-chapter, choice-driven zombie story for iOS built with Swift, MVVM, and persistent reading settings."
+    />
+    <meta name="theme-color" content="#f4f2ec" />
+    <link rel="canonical" href="https://great-visions-code.github.io/Survive/" />
+    <link rel="icon" href="./Pictures/icon.jpg" />
+    <link rel="stylesheet" href="./assets/css/survive.css" />
 
-    <!-- Nav -->
-    <nav id="nav">
-        <ul class="container">
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#showcase">Screenshots</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://great-visions-code.github.io/Survive/" />
+    <meta property="og:site_name" content="Great-Visions" />
+    <meta property="og:title" content="Survive | A SwiftUI Project by Gustavo Vazquez" />
+    <meta
+      property="og:description"
+      content="A choice-driven zombie story—and the project that began Gustavo Vazquez's iOS journey."
+    />
+    <meta
+      property="og:image"
+      content="https://great-visions-code.github.io/Survive/images/og-survive.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+    <meta
+      property="og:image:alt"
+      content="Survive, a SwiftUI project by Gustavo Vazquez"
+    />
 
-    <!-- About the Project -->
-    <article id="about" class="wrapper style1">
-        <div class="container">
-            <header>
-                <h1>Survive</h1>
-            </header>
-            <div class="row">
-                <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/initialWelcomeImage.jpg" alt="Initial welcome screen of Survive game" /></span>
-                </div>
-                <div class="col-8 col-7-large col-12-medium centered-text">
-                    <p>Survive is my inaugural venture into iOS development using Swift and SwiftUI. This text-based RPG immerses players into a zombie apocalypse, where every choice they make influences their journey. The game is designed to be both engaging and immersive, featuring comic-style images that complement the narrative.</p>
-                    <p>In Survive, players awaken in a world overrun by zombies and must navigate through a series of decisions that determine the outcome of their adventure. From start to finish, creating this game has been an incredibly fun and educational experience, offering deep insights into SwiftUI’s navigation and state management features. Each decision branches the story, pushing players to strategize their way through the apocalypse and ultimately survive.</p>
-                    <a href="#features" class="button large scrolly">Dive into Game Features</a>
-                </div>
-            </div>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Survive | A SwiftUI Project by Gustavo Vazquez" />
+    <meta
+      name="twitter:description"
+      content="A choice-driven zombie story—and the project that began Gustavo Vazquez's iOS journey."
+    />
+    <meta
+      name="twitter:image"
+      content="https://great-visions-code.github.io/Survive/images/og-survive.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Survive, a SwiftUI project by Gustavo Vazquez"
+    />
+
+    <title>Survive | A SwiftUI Project by Gustavo Vazquez</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Survive",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "iOS",
+        "description": "A choice-driven, text-based zombie story built with Swift and SwiftUI.",
+        "dateCreated": "2024-02-08",
+        "url": "https://great-visions-code.github.io/Survive/",
+        "codeRepository": "https://github.com/Great-Visions-Code/Survive",
+        "author": {
+          "@type": "Person",
+          "name": "Gustavo Vazquez",
+          "url": "https://great-visions-code.github.io/"
+        }
+      }
+    </script>
+    <script src="./assets/js/project.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner shell">
+        <a
+          class="wordmark"
+          href="https://great-visions-code.github.io/"
+          aria-label="Great-Visions portfolio home"
+        >
+          <span aria-hidden="true">GV</span>
+          <span class="wordmark-copy">
+            <span class="wordmark-title">Great-Visions</span>
+            <span class="wordmark-byline">Software by Gustavo Vazquez</span>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#overview">Overview</a>
+          <a href="#experience">Experience</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#lessons">Lessons</a>
+          <a href="https://great-visions-code.github.io/">
+            Portfolio <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="nav-github"
+            href="https://github.com/Great-Visions-Code/Survive"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+
+        <details class="mobile-navigation">
+          <summary class="menu-button">
+            <span class="menu-label">Menu</span>
+            <span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+          </summary>
+          <nav class="mobile-menu" aria-label="Mobile navigation">
+            <a href="#overview">Overview</a>
+            <a href="#experience">Experience</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#lessons">Lessons</a>
+            <a href="https://great-visions-code.github.io/">
+              Portfolio <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://github.com/Great-Visions-Code/Survive"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Original iOS project · SwiftUI</p>
+          <h1 id="hero-title">
+            A branching zombie story—
+            <span>and the project that began my iOS journey.</span>
+          </h1>
+          <p class="hero-summary">
+            Survive is a text-based RPG for iPhone. Players wake to a collapsed
+            world, make high-stakes choices, and move through illustrated
+            chapters toward safety.
+          </p>
+          <div class="action-row" aria-label="Project actions">
+            <a
+              class="button button-primary"
+              href="https://github.com/Great-Visions-Code/Survive"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View source on GitHub
+            </a>
+            <a class="button button-secondary" href="#overview">
+              Explore the case study
+            </a>
+          </div>
+          <p class="scope-note">
+            The current build includes 17 chapters, multiple routes, and one
+            shared ending.
+          </p>
         </div>
-    </article>
 
-    <!-- Game Highlights -->
-    <article id="features" class="wrapper style2">
-        <div class="container">
-            <header>
-                <h1>Game Features</h1>
-                <p>Survive is designed to be a dynamic storytelling experience, where every decision changes the course of the game.</p>
-            </header>
-            <div class="row aln-center">
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon featured fas fa-pen-fancy"></span>
-                        <h3>Dynamic Storytelling</h3>
-                        <p>In its current form, the game features a single ending, but the foundation is laid for future expansion. Each decision shapes the narrative, and there is significant potential to develop multiple storylines and endings based on user choices. This initial version provides a glimpse into the dynamic storytelling possibilities that could be explored as the project evolves.</p>
-                    </section>
-                </div>
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon featured fas fa-images"></span>
-                        <h3>Immersive Visuals</h3>
-                        <p>Immerse yourself in the narrative through beautifully crafted comic-style images generated with AI. These visuals enhance the storytelling by bringing key scenes to life, adding depth and atmosphere to the text-based adventure. Each image complements the narrative, helping to visualize the world and characters of the zombie apocalypse, enriching the overall experience.</p>
-                    </section>
-                </div>
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon featured fas fa-route"></span>
-                        <h3>Decision Impact</h3>
-                        <p>In Survive, every choice you make influences the narrative and story progression, though all paths currently lead to the same ending. This design ensures that each decision impacts the journey and provides a unique experience. There is significant potential to expand the game further, allowing for multiple endings and a richer narrative based on player choices.</p>
-                    </section>
-                </div>
-            </div>
-            <footer>
-                <p>Survive is more than a game; it's an evolving adventure inviting you to explore new paths with every decision.</p>
-            </footer>
+        <figure class="hero-visual">
+          <div class="device-frame">
+            <img
+              src="./images/initialWelcomeImage.jpg"
+              alt="Survive opening screen with a lone figure facing a ruined city"
+              width="1284"
+              height="2778"
+              fetchpriority="high"
+            />
+          </div>
+          <figcaption>
+            <span>Survive</span>
+            <span>Swift · SwiftUI · MVVM</span>
+          </figcaption>
+        </figure>
+
+        <dl class="hero-meta" aria-label="Project summary">
+          <div>
+            <dt>Format</dt>
+            <dd>Interactive fiction</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>iOS</dd>
+          </div>
+          <div>
+            <dt>Built</dt>
+            <dd>2024</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section shell" id="overview" aria-labelledby="overview-title">
+        <div class="section-heading">
+          <p class="section-number" aria-hidden="true">01</p>
+          <div>
+            <p class="eyebrow">Project overview</p>
+            <h2 id="overview-title">Learning Swift by building a complete experience.</h2>
+          </div>
         </div>
-    </article>
 
-    <!-- App Showcase -->
-    <article id="showcase" class="wrapper style3">
-        <div class="container">
-            <header>
-                <h1>App Showcase</h1>
-                <p>Discover snapshots of Survive's gameplay through the images below. Each screenshot provides a glimpse into different aspects of the app, showcasing the development process and key features.</p>
-            </header>
-            <div class="row">
-                <div class="col-4 col-6-medium col-12-small">
-                    <article class="box style2">
-                        <a href="#" class="image featured"><img src="images/dynamicStoryTellingImage.jpg" alt="Dynamic storytelling feature in Survive" /></a>
-                        <h3><a href="#">Overview</a></h3>
-                        <p>The concept for Survive was inspired by a deep fascination with zombies and the goal of creating a simple, text-based app to gain hands-on experience with what I have been learning. This screenshot highlights the beginning of the game, showcasing the initial chapter with static images and text for players to read.</p>
-                    </article>
-                </div>
-                <div class="col-4 col-6-medium col-12-small">
-                    <article class="box style2">
-                        <a href="#" class="image featured"><img src="images/pickYourPathImage.jpg" alt="Pick your path choices in Survive" /></a>
-                        <h3><a href="#">Inspiration</a></h3>
-                        <p>Drawing inspiration from old Goosebumps books that featured interactive storytelling, this image showcases a part of the app where users encounter interactive choices. It provides a sample of the decisions players can make, influencing their experience within the game.</p>
-                    </article>
-                </div>
-                <div class="col-4 col-6-medium col-12-small">
-                    <article class="box style2">
-                        <a href="#" class="image featured"><img src="images/immersiveVisualsImage.jpg" alt="Immersive visuals in Survive" /></a>
-                        <h3><a href="#">Challenges</a></h3>
-                        <p>One of the biggest challenges faced was mastering `NavigationView` and `NavigationStack` to link views based on user interactions. Managing these components effectively was crucial for creating a seamless navigation experience in the app.</p>
-                    </article>
-                </div>
+        <div class="overview-grid">
+          <div class="overview-copy">
+            <p class="overview-lede">
+              Survive began with a practical goal: turn a
+              choose-your-own-adventure idea into a working iPhone app.
+            </p>
+            <p>
+              Building the game made abstract lessons about navigation, state,
+              and data flow concrete. Each chapter lives as structured data;
+              every choice points to another chapter; and a focused view model
+              keeps the interface in sync with the player's path.
+            </p>
+            <div class="status-note">
+              <span>Why it matters</span>
+              <p>
+                This was my first Swift project—the point where studying iOS
+                concepts became designing, debugging, and finishing a usable
+                product.
+              </p>
             </div>
-            <footer>
-                <p>Discover more about the development journey and the potential for future expansions.</p>
-                <a href="https://github.com/Great-Visions-Code/Survive" class="button large scrolly">Check out Survive on GitHub</a>
-            </footer>
-        </div>
-    </article>
+          </div>
 
-    <!-- Contact -->
-    <article id="contact" class="wrapper style4">
-        <div class="container medium">
-            <div class="col-12">
-                <hr />
-                <h3>Get in Touch</h3>
-                <ul class="social">
-                    <li><a href="https://github.com/Great-Visions-Code" class="icon brands fa-github" aria-label="GitHub Profile"><span class="label">GitHub</span></a></li>
-                    <li><a href="mailto:great.visions@icloud.com" class="icon solid fa-envelope" aria-label="Email Gustavo Vazquez"><span class="label">Email</span></a></li>
-                </ul>
-                <hr />
+          <dl class="project-details">
+            <div>
+              <dt>Project purpose</dt>
+              <dd>
+                Explore SwiftUI by building a choice-driven story with a clear
+                beginning, branching journey, and ending.
+              </dd>
             </div>
-            <footer>
-                <ul id="copyright">
-                    <li>&copy; Gustavo Vazquez. All rights reserved.</li>
-                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                </ul>
-            </footer>
+            <div>
+              <dt>My role</dt>
+              <dd>
+                Independent iOS developer, interface designer, and story
+                creator.
+              </dd>
+            </div>
+            <div>
+              <dt>Technology</dt>
+              <dd>
+                Swift, SwiftUI, MVVM, NavigationStack, ObservableObject, and
+                AppStorage.
+              </dd>
+            </div>
+            <div>
+              <dt>Story structure</dt>
+              <dd>
+                Seventeen structured chapters connected by player choices and
+                chapter identifiers.
+              </dd>
+            </div>
+            <div>
+              <dt>Reader settings</dt>
+              <dd>
+                Adjustable text size saved across launches for a more
+                comfortable reading experience.
+              </dd>
+            </div>
+            <div>
+              <dt>Current scope</dt>
+              <dd>
+                Different routes change the journey and currently converge on
+                one ending, leaving room for future expansion.
+              </dd>
+            </div>
+          </dl>
         </div>
-    </article>
+      </section>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+      <section
+        class="section section-tint"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="shell">
+          <div class="section-heading">
+            <p class="section-number" aria-hidden="true">02</p>
+            <div>
+              <p class="eyebrow">The experience</p>
+              <h2 id="experience-title">Story, choices, and atmosphere.</h2>
+            </div>
+          </div>
 
-</body>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <p class="feature-number" aria-hidden="true">01</p>
+              <h3>Choices move the story</h3>
+              <p>
+                Each decision maps to a new chapter, giving players different
+                routes through the same survival scenario.
+              </p>
+            </article>
+            <article class="feature-card">
+              <p class="feature-number" aria-hidden="true">02</p>
+              <h3>Illustration builds atmosphere</h3>
+              <p>
+                AI-generated comic-style scenes support the text and give key
+                moments a consistent visual tone.
+              </p>
+            </article>
+            <article class="feature-card">
+              <p class="feature-number" aria-hidden="true">03</p>
+              <h3>Reading adapts to the player</h3>
+              <p>
+                A persistent font-size setting lets players tune the
+                narrative-heavy interface to their preference.
+              </p>
+            </article>
+          </div>
+
+          <aside class="scope-card" aria-labelledby="scope-title">
+            <div>
+              <p class="eyebrow">An honest first release</p>
+              <h3 id="scope-title">The routes branch. The destination is shared.</h3>
+            </div>
+            <p>
+              Survive does not claim multiple endings in its current form.
+              Player decisions change the scenes and route through the story,
+              while every path ultimately reaches the evacuation center. The
+              underlying chapter model makes additional routes and endings a
+              natural next step.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section shell" id="gallery" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <p class="section-number" aria-hidden="true">03</p>
+          <div>
+            <p class="eyebrow">App gallery</p>
+            <h2 id="gallery-title">A story designed for the phone in your hand.</h2>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <div class="gallery-device">
+              <img
+                src="./images/dynamicStoryTellingImage.jpg"
+                alt="A Survive chapter showing narrative text and a zombie scene"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>
+              <span>Opening chapter</span>
+              <p>Story text and scene art establish the stakes before the first choice.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-card">
+            <div class="gallery-device">
+              <img
+                src="./images/pickYourPathImage.jpg"
+                alt="A Survive chapter with two choice buttons for the player"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>
+              <span>Player choice</span>
+              <p>Clear actions let the player decide which chapter comes next.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-card">
+            <div class="gallery-device">
+              <img
+                src="./images/immersiveVisualsImage.jpg"
+                alt="A tense illustrated scene from the Survive story"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>
+              <span>Illustrated tension</span>
+              <p>Full-width scenes reinforce the danger and pacing of the narrative.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section lessons-section" id="lessons" aria-labelledby="lessons-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="section-number" aria-hidden="true">04</p>
+            <div>
+              <p class="eyebrow">What I learned</p>
+              <h2 id="lessons-title">The technical foundation behind the story.</h2>
+            </div>
+          </div>
+
+          <div class="lessons-grid">
+            <div class="lesson-intro">
+              <p>
+                The most important outcome was not a single screen. It was
+                learning how models, state, and views work together across an
+                entire app.
+              </p>
+              <ul class="tech-tags" aria-label="Project technologies">
+                <li>Swift</li>
+                <li>SwiftUI</li>
+                <li>MVVM</li>
+                <li>NavigationStack</li>
+                <li>AppStorage</li>
+              </ul>
+            </div>
+
+            <ol class="lesson-list">
+              <li>
+                <span>01</span>
+                <div>
+                  <h3>Put story relationships in the data.</h3>
+                  <p>
+                    Chapter identifiers and next-chapter links keep branching
+                    logic out of the presentation layer.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <h3>Give shared state one clear owner.</h3>
+                  <p>
+                    A dedicated view model tracks the current chapter and
+                    updates the experience when a player makes a choice.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <h3>Design for reading, not just looking.</h3>
+                  <p>
+                    Persistent font controls matter in an app where long-form
+                    text is the primary interface.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>04</span>
+                <div>
+                  <h3>Describe the product as it exists.</h3>
+                  <p>
+                    Clear scope builds more trust than presenting future ideas
+                    as finished features.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section lineage-section" aria-labelledby="lineage-title">
+        <div class="shell lineage-grid">
+          <div>
+            <p class="eyebrow">Where it led</p>
+            <h2 id="lineage-title">Survive became a foundation, not a finish line.</h2>
+          </div>
+          <div class="lineage-copy">
+            <p>
+              The original story later became the flagship narrative inside
+              Step By Step, a SwiftUI project that connects HealthKit activity
+              with story energy, achievements, and replayable progress.
+            </p>
+            <div class="action-row">
+              <a class="button button-light" href="https://great-visions-code.github.io/">
+                Visit the Great-Visions portfolio
+              </a>
+              <a
+                class="button button-outline-light"
+                href="https://github.com/Great-Visions-Code/Step-by-Step"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Step By Step
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" aria-labelledby="contact-title">
+        <div class="shell contact-grid">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Want to talk about the build?</h2>
+          </div>
+          <div>
+            <p class="contact-copy">
+              I’m always glad to discuss SwiftUI, interactive storytelling, or
+              what I learned while building Survive.
+            </p>
+            <div class="contact-links">
+              <a href="mailto:great.visions@icloud.com">
+                Email Gustavo
+                <span>great.visions@icloud.com</span>
+              </a>
+              <a
+                href="https://github.com/Great-Visions-Code"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub profile
+                <span>Great-Visions-Code ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <p>© 2026 Great-Visions Software by Gustavo Vazquez</p>
+        <a href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </footer>
+  </body>
 </html>
